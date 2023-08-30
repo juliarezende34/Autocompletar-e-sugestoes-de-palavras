@@ -2,6 +2,7 @@
 #define FUNCTIONS_HPP
 
 #include "palavra.hpp"
+#include "arvore.hpp"
 
 void addMap(unordered_map<string, Palavra> &wordMap, string token);//
 bool isStopWord(unordered_map<string, string> &stopWordMap, string token);//
@@ -12,5 +13,6 @@ void Swap(Palavra *a, Palavra *b);
 void check(unordered_map<string, Palavra> &wordMap, vector<Palavra> &vetorPalavras);
 void BubbleSort(vector<pair<int,int>> &v);
 void outputFile(ofstream &arquivo, string palavra, vector<pair<int,int>> &vec);
+void arvoreBinaria(itemArvore ** no, Palavra item);
 
 #endif

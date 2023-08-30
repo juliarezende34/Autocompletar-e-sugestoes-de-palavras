@@ -9,7 +9,7 @@
 #include <vector>
 #include <unordered_map>
 
-#define K 20
+#define K 21
 
 using namespace std;
 
