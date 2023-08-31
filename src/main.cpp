@@ -9,13 +9,13 @@
 int main() {
     clock_t startTime, endTime;
     startTime = clock();
-    itemArvore * raiz = NULL;
+    itemArvore * raiz = nullptr;
     string vetorArquivos[NUMERO_ARQUIVOS] = {"dataset/filosofia.txt", "dataset/filosofia2.txt", "dataset/globalizacao.txt", "dataset/politica.txt", "dataset/ti.txt", "dataset/ti2.txt"}, linha;
     string palavraAtual;
     ifstream arquivo, arquivoStopWords, arquivoInput;
     ofstream output;
-    vector<string> tokens;
-    vector<Palavra> vetorPalavras;
+    vector<string> tokens, vetorInput;
+    vector<Palavra> vetorPalavras, copiaHeap;
     vector<pair<int,int>> vetorOcorrencias;
     string token, stopword; 
     unordered_map<string, Palavra> vetorMaps[NUMERO_ARQUIVOS];
@@ -76,18 +76,28 @@ int main() {
         cout << "Não foi possível abrir o arquivo de input." << endl;
         return 1;
     }
+    if(!output.is_open()){
+        cout << "Não foi possível abrir o arquivo de output." << endl;
+        return 1;
+    }
     while(!arquivoInput.eof()){
         arquivoInput >> palavraAtual;
-        for(int i = 0; i < NUMERO_ARQUIVOS; i++){
-            vetorOcorrencias.push_back(make_pair((i+1),vetorMaps[i][palavraAtual].ocorrencias));
-        }
-        for(int i = 0; i < NUMERO_ARQUIVOS; i++){
-            cout << "\nTexto " << i+1 << endl;
-            criarHeapK(vetorMaps[i], vetorPalavras);
-            check(vetorMaps[i], vetorPalavras);
-            for(int j = 0; j < (int)vetorPalavras.size(); j++){
-                if(vetorPalavras[j].texto == palavraAtual){
-                    vetorPalavras.erase(vetorPalavras.begin() + j);
+        vetorInput.push_back(palavraAtual);
+    }    
+    arquivoInput.close();
+
+    for(int i = 0; i < NUMERO_ARQUIVOS; i++){
+        cout << "\nTexto " << i+1 << endl;
+        criarHeapK(vetorMaps[i], vetorPalavras);
+        check(vetorMaps[i], vetorPalavras);
+        copiaHeap = vetorPalavras;
+        for(int j = 0; j < (int)vetorInput.size(); j++){
+            for(int x = 0; x < NUMERO_ARQUIVOS; x++){
+                vetorOcorrencias.push_back(make_pair((x+1),vetorMaps[x][vetorInput[j]].ocorrencias));
+            }
+            for(int k = 0; k < (int)vetorPalavras.size(); k++){
+                if(vetorPalavras[k].texto == vetorInput[j]){
+                    vetorPalavras.erase(vetorPalavras.begin() + k);
                     controle = 1;
                     break;
                 }
@@ -96,22 +106,18 @@ int main() {
                 //A palavra digitada não está nos top elementos, então preciso remover o último para ter o top K
                 vetorPalavras.pop_back();
             }
-            //Aqui terei o vetor das 20 palavras mais frequentes do texto, desconsiderando a palavra atual
-            //A palavra ocorre no arquivo i
             for(int k = 0; k < (int)vetorPalavras.size(); k++){
                 if(vetorOcorrencias[i].second > 0){
                     arvoreBinaria(&raiz, vetorPalavras[k]);
                 }
-                cout << vetorPalavras[k].texto << " | " << vetorPalavras[k].ocorrencias << endl;
             }
-            vetorPalavras.clear();
+            BubbleSort(vetorOcorrencias);
+            outputFile(output, palavraAtual, vetorOcorrencias);
+            vetorOcorrencias.clear();
+            vetorPalavras = copiaHeap;
         }
-        BubbleSort(vetorOcorrencias);
-        outputFile(output, palavraAtual, vetorOcorrencias);
-        vetorOcorrencias.clear();
     }
-    
-    arquivoInput.close();
+
     output.close();
 
     endTime = clock();
