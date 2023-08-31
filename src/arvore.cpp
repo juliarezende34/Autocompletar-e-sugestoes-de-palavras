@@ -6,3 +6,8 @@ itemArvore :: itemArvore(Palavra item){
     this->ocorrencia = item.ocorrencias;
     this->palavra = item.texto;
 }
+
+itemArvore :: itemArvore(){
+    this->filhoEsquerdo = NULL;
+    this->filhoDireito = NULL;
+}

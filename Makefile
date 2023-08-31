@@ -1,5 +1,5 @@
 CXX      := -g++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++17 -fsanitize=address,undefined -fno-omit-frame-pointer -g 
+CXXFLAGS := -Wall -Wextra -Werror -std=c++17 
 LDFLAGS  := -lstdc++ -lm
 BUILD    := ./build
 OBJ_DIR  := $(BUILD)/objects

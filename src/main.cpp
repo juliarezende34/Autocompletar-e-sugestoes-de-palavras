@@ -6,10 +6,18 @@
 #include <time.h>
 #define NUMERO_ARQUIVOS 6
 
+void recursive(itemArvore *raiz) {
+    if (raiz != nullptr) {
+        recursive(raiz->filhoEsquerdo);
+        std::cout << raiz->palavra << " " << raiz->ocorrencia << std::endl;
+        recursive(raiz->filhoDireito);
+    }
+}
+
 int main() {
     clock_t startTime, endTime;
     startTime = clock();
-    itemArvore * raiz = nullptr;
+    itemArvore * raiz = new itemArvore();
     string vetorArquivos[NUMERO_ARQUIVOS] = {"dataset/filosofia.txt", "dataset/filosofia2.txt", "dataset/globalizacao.txt", "dataset/politica.txt", "dataset/ti.txt", "dataset/ti2.txt"}, linha;
     string palavraAtual;
     ifstream arquivo, arquivoStopWords, arquivoInput;
@@ -91,35 +99,43 @@ int main() {
         criarHeapK(vetorMaps[i], vetorPalavras);
         check(vetorMaps[i], vetorPalavras);
         copiaHeap = vetorPalavras;
-        for(int j = 0; j < (int)vetorInput.size(); j++){
-            for(int x = 0; x < NUMERO_ARQUIVOS; x++){
-                vetorOcorrencias.push_back(make_pair((x+1),vetorMaps[x][vetorInput[j]].ocorrencias));
+        for(int k = 0; k < (int)vetorPalavras.size(); k++){
+                cout << "\t" << vetorPalavras[k].texto << endl;
             }
+        for(int j = 0; j < (int)vetorInput.size(); j++){ 
             for(int k = 0; k < (int)vetorPalavras.size(); k++){
                 if(vetorPalavras[k].texto == vetorInput[j]){
-                    vetorPalavras.erase(vetorPalavras.begin() + k);
                     controle = 1;
                     break;
                 }
             }
-            if(controle == 0){
-                //A palavra digitada não está nos top elementos, então preciso remover o último para ter o top K
-                vetorPalavras.pop_back();
+            if(controle == 1){
+                //A palavra do input está no heap
+                for(int k = 0; k < (int)vetorPalavras.size(); k++){
+                    if(vetorPalavras[k].texto == vetorInput[j]){
+                        vetorPalavras.erase(vetorPalavras.begin() + k);
+                        break;
+                    }
+                }
             }
-            for(int k = 0; k < (int)vetorPalavras.size(); k++){
-                if(vetorOcorrencias[i].second > 0){
+            else{
+                vetorPalavras.pop_back();
+            } 
+
+            if(vetorMaps[i][vetorInput[j]].ocorrencias != 0){
+                for(int k = 0; k < (int)vetorPalavras.size(); k++){
                     arvoreBinaria(&raiz, vetorPalavras[k]);
                 }
             }
-            BubbleSort(vetorOcorrencias);
-            outputFile(output, palavraAtual, vetorOcorrencias);
-            vetorOcorrencias.clear();
-            vetorPalavras = copiaHeap;
+
+            vetorPalavras = copiaHeap;  
         }
+        cout << raiz->palavra << endl;
+        vetorPalavras.clear();
+        cout << endl;
     }
 
     output.close();
-
     endTime = clock();
     clock_t elapsedTime = endTime - startTime;
     double elapsedTimeMs = ((double)elapsedTime/CLOCKS_PER_SEC)*1000;
@@ -127,5 +143,3 @@ int main() {
     
     return 0;
 }
-
-//MUDAR O VETOR PALAVRA PARA UM VETOR DE VETORES E FAZER OS HEAPS ANTES DA LEITURA DO ARQUIVO DE INPUT

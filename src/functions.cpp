@@ -87,8 +87,8 @@ void BubbleSort(vector<pair<int,int>> &vec) {
     }
 }
 
-void arvoreBinaria(itemArvore ** no, Palavra item){
-    if((*no) == nullptr){
+void arvoreBinaria(itemArvore ** no, Palavra &item){
+    if((*no) == NULL){
        (*no) = new itemArvore(item);
     }
     else{
@@ -102,11 +102,9 @@ void arvoreBinaria(itemArvore ** no, Palavra item){
 }
 
 
-void outputFile(ofstream &arquivo, string palavra, vector<pair<int,int>> &vec){
+void outputFile(ofstream &arquivo, string palavra, int ocorrencia){
     arquivo << "=================================================================================================================================================================" << endl;
     arquivo << "                                                                     "<< palavra << "                                                                            " << endl;
     arquivo << "=================================================================================================================================================================" << endl;
-    for(int i = 0; i < (int)vec.size()-1; i++){
-        arquivo << "Texto " << vec[i].first << " | Frequência: " << vec[i].second << endl;
-    }
+    arquivo << "Texto " << palavra << " | Frequência: " << ocorrencia << endl;
 }

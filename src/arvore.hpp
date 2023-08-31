@@ -9,7 +9,7 @@ class itemArvore{
         int ocorrencia;
         itemArvore *filhoEsquerdo, *filhoDireito;
         itemArvore(Palavra item);
-    
+        itemArvore();
         /*itemArvore& operator=(const itemArvore& outro){
             palavra = outro.palavra;
             ocorrencia = outro.ocorrencia;

@@ -12,7 +12,7 @@ void rebuildHeap(vector<Palavra> &vetorPalavras, int i, int size);//
 void Swap(Palavra *a, Palavra *b);
 void check(unordered_map<string, Palavra> &wordMap, vector<Palavra> &vetorPalavras);
 void BubbleSort(vector<pair<int,int>> &v);
-void outputFile(ofstream &arquivo, string palavra, vector<pair<int,int>> &vec);
-void arvoreBinaria(itemArvore ** no, Palavra item);
+void outputFile(ofstream &arquivo, string palavra, int ocorrencia);
+void arvoreBinaria(itemArvore ** no, Palavra &item);
 
 #endif
