@@ -92,19 +92,171 @@ void arvoreBinaria(itemArvore ** no, Palavra &item){
        (*no) = new itemArvore(item);
     }
     else{
-        if(item.ocorrencias <= (*no)->ocorrencia){
-            arvoreBinaria(&(*no)->filhoEsquerdo, item);
-        }
-        else{
-            arvoreBinaria(&(*no)->filhoDireito, item);
+        if(item.texto != (*no)->palavra){
+            if(item.ocorrencias <= (*no)->ocorrencia){
+                arvoreBinaria(&(*no)->filhoEsquerdo, item);
+            }
+            else{
+                arvoreBinaria(&(*no)->filhoDireito, item);
+            }
         }
     }
 }
 
+void arvoreAVL(itemArvoreAVL ** no, Palavra &item){
+    if((*no) == NULL){
+        (*no) = new itemArvoreAVL(item);
+    }
+    else{
+        if(item.texto != (*no)->palavra){
+            if(item.ocorrencias <= (*no)->ocorrencia){
+                arvoreAVL(&(*no)->filhoEsquerdo, item);
+                if((getWeight(&(*no)->filhoEsquerdo) - getWeight(&(*no)->filhoDireito)) == 2){
+                    if(item.ocorrencias <= (*no)->filhoEsquerdo->ocorrencia){
+                        rotacaoSimplesDireita(no);
+                    }
+                    else{
+                        rotacaoDuplaDireita(no);
+                    }
+                }
+            }
+            if(item.ocorrencias > (*no)->ocorrencia){
+                arvoreAVL(&(*no)->filhoDireito, item);
+                if((getWeight(&(*no)->filhoDireito) - getWeight(&(*no)->filhoEsquerdo)) == 2){
+                    if(item.ocorrencias > (*no)->filhoDireito->ocorrencia){
+                        rotacaoSimplesEsquerda(no);
+                    }
+                    else{
+                        rotacaoDuplaEsquerda(no);
+                    }
+                }
+            }
+        }
+    }
+    (*no)->peso = getMaxWeight(getWeight(&(*no)->filhoEsquerdo), getWeight(&(*no)->filhoDireito)) + 1;
+}
 
-void outputFile(ofstream &arquivo, string palavra, int ocorrencia){
-    arquivo << "=================================================================================================================================================================" << endl;
-    arquivo << "                                                                     "<< palavra << "                                                                            " << endl;
-    arquivo << "=================================================================================================================================================================" << endl;
-    arquivo << "Texto " << palavra << " | Frequência: " << ocorrencia << endl;
+int getWeight(itemArvoreAVL ** no){
+    if((*no) == NULL){
+        return -1;
+    }
+    else{
+        return (*no)->peso;
+    }
+}
+
+int getMaxWeight(int left, int right){
+    if(left > right){
+        return left;
+    }
+    else{
+        return right;
+    }
+}
+
+void rotacaoSimplesDireita(itemArvoreAVL ** no){
+    itemArvoreAVL *aux;
+    aux = (*no)->filhoEsquerdo;
+    (*no)->filhoEsquerdo = aux->filhoDireito;
+    aux->filhoDireito = (*no);
+    (*no)->peso = getMaxWeight(getWeight(&(*no)->filhoEsquerdo), getWeight(&(*no)->filhoDireito)) + 1;
+    aux->peso = getMaxWeight(getWeight(&aux->filhoEsquerdo), (*no)->peso) + 1;
+    (*no) = aux;
+}
+
+void rotacaoSimplesEsquerda(itemArvoreAVL ** no){
+    itemArvoreAVL * aux;
+    aux = (*no)->filhoDireito;
+    (*no)->filhoDireito = aux->filhoEsquerdo;
+    aux->filhoEsquerdo = (*no);
+    (*no)->peso = getMaxWeight(getWeight(&(*no)->filhoEsquerdo), getWeight(&(*no)->filhoDireito)) + 1;
+    aux->peso = getMaxWeight(getWeight(&aux->filhoEsquerdo), (*no)->peso) + 1;
+    (*no) = aux;
+}
+
+void rotacaoDuplaDireita(itemArvoreAVL ** no){
+    rotacaoSimplesEsquerda(&(*no)->filhoEsquerdo);
+    rotacaoSimplesDireita(no);
+}
+
+void rotacaoDuplaEsquerda(itemArvoreAVL ** no){
+    rotacaoSimplesDireita(&(*no)->filhoDireito);
+    rotacaoSimplesEsquerda(no);
+}
+
+void deleteTree(itemArvore* root) {
+    if (root == NULL) {
+        return; // Árvore vazia, nada a fazer
+    }
+
+    // Deleta os nós filhos (subárvores) primeiro
+    deleteTree(root->filhoEsquerdo);
+    deleteTree(root->filhoDireito);
+
+    // Deleta o nó atual
+    delete root;
+}
+
+void deleteTreeAVL(itemArvoreAVL* root){
+    if (root == NULL) {
+        return; // Árvore vazia, nada a fazer
+    }
+
+    // Deleta os nós filhos (subárvores) primeiro
+    deleteTreeAVL(root->filhoEsquerdo);
+    deleteTreeAVL(root->filhoDireito);
+
+    // Deleta o nó atual
+    delete root;
+}
+
+void printVector(vector<itemArvore*> &v,ofstream &arquivo){
+    for(int i = 0; i < (int)v.size(); i++){
+        arquivo << "["<< v[i]->palavra << "|" << v[i]->ocorrencia << "]"<< " ";
+    }
+}
+
+void printVectorAVL(vector<itemArvoreAVL*> &v,ofstream &arquivo){
+    for(int i = 0; i < (int)v.size(); i++){
+        arquivo << "["<< v[i]->palavra << "|" << v[i]->ocorrencia << "]"<< " ";
+    }
+}
+
+void central(itemArvore *t, vector<itemArvore*> &v)
+{
+  if(!(t == NULL)){
+    central(t->filhoEsquerdo, v); 
+    v.push_back(t);
+    central(t->filhoDireito, v); 
+  }
+}
+
+void centralAVL(itemArvoreAVL *t, vector<itemArvoreAVL*> &v)
+{
+  if(!(t == NULL)){
+    centralAVL(t->filhoEsquerdo, v); 
+    v.push_back(t);
+    centralAVL(t->filhoDireito, v); 
+  }
+}
+
+void outputFileIntro(ofstream &arquivo,int i){
+    arquivo << "=====================================================================================================================================================================================================================================================================================================================" << endl;
+    arquivo << "                                                                                      Texto "<< i+1 << "                                                                            " << endl;
+    arquivo << "=====================================================================================================================================================================================================================================================================================================================" << endl;
+}
+
+
+void outputFile(ofstream &arquivo, string palavra, int ocorrencia, vector<itemArvore*> vetorArvore, vector<itemArvoreAVL*> vetorArvoreAVL){
+    arquivo << endl << palavra << endl;
+    arquivo <<"Frequência: " << ocorrencia << endl;
+    arquivo << "Árvore binária - Central:\n";
+    if(ocorrencia > 0){
+        printVector(vetorArvore, arquivo);
+    }
+    arquivo << "\nÁrvore AVL - Central:\n";
+    if(ocorrencia > 0){
+        printVectorAVL(vetorArvoreAVL, arquivo);
+    }
+    arquivo << endl;
 }

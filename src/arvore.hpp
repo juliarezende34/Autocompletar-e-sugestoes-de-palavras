@@ -19,4 +19,14 @@ class itemArvore{
         }*/
 };
 
+class itemArvoreAVL{
+    public:
+        string palavra;
+        int ocorrencia;
+        int peso;
+        itemArvoreAVL *filhoEsquerdo, *filhoDireito;
+        itemArvoreAVL(Palavra item);
+        itemArvoreAVL();
+};
+
 #endif

@@ -3,27 +3,18 @@
 #include "functions.hpp"
 #include <sstream> 
 #include <vector>
-#include <time.h>
+#include <chrono>
 #define NUMERO_ARQUIVOS 6
 
-void recursive(itemArvore *raiz) {
-    if (raiz != nullptr) {
-        recursive(raiz->filhoEsquerdo);
-        std::cout << raiz->palavra << " " << raiz->ocorrencia << std::endl;
-        recursive(raiz->filhoDireito);
-    }
-}
-
-int main() {
-    clock_t startTime, endTime;
-    startTime = clock();
-    itemArvore * raiz = new itemArvore();
+int main() {    
     string vetorArquivos[NUMERO_ARQUIVOS] = {"dataset/filosofia.txt", "dataset/filosofia2.txt", "dataset/globalizacao.txt", "dataset/politica.txt", "dataset/ti.txt", "dataset/ti2.txt"}, linha;
     string palavraAtual;
     ifstream arquivo, arquivoStopWords, arquivoInput;
     ofstream output;
     vector<string> tokens, vetorInput;
     vector<Palavra> vetorPalavras, copiaHeap;
+    vector<itemArvore*> vetorArvore;
+    vector<itemArvoreAVL*> vetorArvoreAVL;
     vector<pair<int,int>> vetorOcorrencias;
     string token, stopword; 
     unordered_map<string, Palavra> vetorMaps[NUMERO_ARQUIVOS];
@@ -79,13 +70,8 @@ int main() {
     }
 
     arquivoInput.open("dataset/input.data", ios::in);
-    output.open("dataset/output.data", ios::out);
     if (!arquivoInput.is_open()) {
         cout << "Não foi possível abrir o arquivo de input." << endl;
-        return 1;
-    }
-    if(!output.is_open()){
-        cout << "Não foi possível abrir o arquivo de output." << endl;
         return 1;
     }
     while(!arquivoInput.eof()){
@@ -94,14 +80,17 @@ int main() {
     }    
     arquivoInput.close();
 
+    output.open("dataset/output.data", ios::out);
+    if (!output.is_open()) {
+        cout << "Não foi possível abrir o arquivo de output." << endl;
+        return 1;
+    }
     for(int i = 0; i < NUMERO_ARQUIVOS; i++){
-        cout << "\nTexto " << i+1 << endl;
+        //itemArvore * raiz = new itemArvore();
+        outputFileIntro(output, i);
         criarHeapK(vetorMaps[i], vetorPalavras);
         check(vetorMaps[i], vetorPalavras);
         copiaHeap = vetorPalavras;
-        for(int k = 0; k < (int)vetorPalavras.size(); k++){
-                cout << "\t" << vetorPalavras[k].texto << endl;
-            }
         for(int j = 0; j < (int)vetorInput.size(); j++){ 
             for(int k = 0; k < (int)vetorPalavras.size(); k++){
                 if(vetorPalavras[k].texto == vetorInput[j]){
@@ -123,23 +112,37 @@ int main() {
             } 
 
             if(vetorMaps[i][vetorInput[j]].ocorrencias != 0){
+                itemArvore * raiz = new itemArvore();
+                itemArvoreAVL * raizAVL = new itemArvoreAVL();
+                auto start = std::chrono::high_resolution_clock::now();
                 for(int k = 0; k < (int)vetorPalavras.size(); k++){
                     arvoreBinaria(&raiz, vetorPalavras[k]);
                 }
+                auto end = std::chrono::high_resolution_clock::now();
+                auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+                std::cout << "Tempo de execução - Árvore binária - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl;
+                
+                start = std::chrono::high_resolution_clock::now();
+                for(int k = 0; k < (int)vetorPalavras.size(); k++){
+                    arvoreAVL(&raizAVL, vetorPalavras[k]);
+                }
+                end = std::chrono::high_resolution_clock::now();
+                duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+                std::cout << "Tempo de execução - Árvore AVL - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl << endl;
+                
+                central(raiz, vetorArvore);
+                centralAVL(raizAVL, vetorArvoreAVL);
+                outputFile(output, vetorMaps[i][vetorInput[j]].texto, vetorMaps[i][vetorInput[j]].ocorrencias, vetorArvore, vetorArvoreAVL);
+                deleteTree(raiz);
+                deleteTreeAVL(raizAVL);
+                controle = 0;
+                vetorArvore.clear();
+                vetorArvoreAVL.clear();
             }
-
             vetorPalavras = copiaHeap;  
         }
-        cout << raiz->palavra << endl;
         vetorPalavras.clear();
-        cout << endl;
     }
-
     output.close();
-    endTime = clock();
-    clock_t elapsedTime = endTime - startTime;
-    double elapsedTimeMs = ((double)elapsedTime/CLOCKS_PER_SEC)*1000;
-    cout << "TEMPO DE EXECUÇÃO: " << elapsedTimeMs << " ms " << endl;
-    
     return 0;
 }

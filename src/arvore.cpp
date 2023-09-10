@@ -11,3 +11,16 @@ itemArvore :: itemArvore(){
     this->filhoEsquerdo = NULL;
     this->filhoDireito = NULL;
 }
+
+itemArvoreAVL :: itemArvoreAVL(Palavra item){
+    filhoEsquerdo = NULL;
+    filhoDireito = NULL;
+    ocorrencia = item.ocorrencias;
+    palavra = item.texto;
+    peso = 0;
+}
+
+itemArvoreAVL :: itemArvoreAVL(){
+    filhoEsquerdo = NULL;
+    filhoDireito = NULL;
+}
