@@ -1,6 +1,13 @@
 #include "functions.hpp"
 
 int Kaux = K + 1;
+struct CompararOcorrencias{
+   bool operator()(itemHuffman * a, itemHuffman * b){
+        return a->ocorrencia > b->ocorrencia;
+   }
+};
+
+priority_queue<itemHuffman*, vector<itemHuffman*>, CompararOcorrencias> pq;
 
 void addMap(unordered_map<string, Palavra> &wordMap, string token){
     if(wordMap.find(token) != wordMap.end()){
@@ -251,12 +258,37 @@ void outputFile(ofstream &arquivo, string palavra, int ocorrencia, vector<itemAr
     arquivo << endl << palavra << endl;
     arquivo <<"Frequência: " << ocorrencia << endl;
     arquivo << "Árvore binária - Central:\n";
-    if(ocorrencia > 0){
-        printVector(vetorArvore, arquivo);
-    }
+    printVector(vetorArvore, arquivo);
     arquivo << "\nÁrvore AVL - Central:\n";
-    if(ocorrencia > 0){
-        printVectorAVL(vetorArvoreAVL, arquivo);
-    }
+    printVectorAVL(vetorArvoreAVL, arquivo);
     arquivo << endl;
+}
+
+//Codificação de Huffman
+void codificacaoHuffman(vector<Palavra> &vetorPalavras, itemHuffman * raiz){
+    for(int i = 0; i < (int)vetorPalavras.size(); i++){
+        pq.push(new itemHuffman(vetorPalavras[i].texto, vetorPalavras[i].ocorrencias));
+    }
+    while(pq.size() > 1){
+        itemHuffman * esquerdo = pq.top();
+        pq.pop();
+        itemHuffman * direito = pq.top();
+        pq.pop();
+
+        itemHuffman * pai = new itemHuffman("\0", esquerdo->ocorrencia + direito->ocorrencia);
+        pai->filhoDireito = direito;
+        pai->filhoEsquerdo = esquerdo;
+        pq.push(pai);
+    }
+    raiz = pq.top();
+    raiz->ocorrencia = pq.top()->ocorrencia;
+}
+
+void gerarCodigoHuffman(itemHuffman * raiz, string codigo){
+    if(!raiz){
+        return;
+    }    
+    raiz->codigo = codigo;
+    gerarCodigoHuffman(raiz->filhoEsquerdo, codigo + "0");
+    gerarCodigoHuffman(raiz->filhoDireito, codigo + "1");
 }

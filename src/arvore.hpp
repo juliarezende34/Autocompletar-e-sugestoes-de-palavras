@@ -29,4 +29,15 @@ class itemArvoreAVL{
         itemArvoreAVL();
 };
 
+class itemHuffman{
+    public:
+        string palavra;
+        int ocorrencia;
+        string codigo;
+        itemHuffman * filhoEsquerdo;
+        itemHuffman * filhoDireito;
+        itemHuffman();
+        itemHuffman(string p, int o);
+};
+
 #endif

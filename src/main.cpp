@@ -1,7 +1,7 @@
 #include "palavra.hpp"
 #include "arvore.hpp"
 #include "functions.hpp"
-#include <sstream> 
+#include <sstream>
 #include <vector>
 #include <chrono>
 #define NUMERO_ARQUIVOS 6
@@ -49,11 +49,21 @@ int main() {
             linha.erase(remove(linha.begin(), linha.end(), '"'), linha.end());
             linha.erase(remove(linha.begin(), linha.end(), ';'), linha.end());
             linha.erase(remove(linha.begin(), linha.end(), '/'), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), '-'), linha.end());
             linha.erase(remove(linha.begin(), linha.end(), ':'), linha.end());
-
+            linha.erase(remove(linha.begin(), linha.end(), '\n'), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), '\t'), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), ')'), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), '('), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), '>'), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), '<'), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), '~'), linha.end());
+            linha.erase(remove(linha.begin(), linha.end(), '\''), linha.end());
+            linha.erase(0, linha.find_first_not_of(" "));
+            linha.erase(linha.find_last_not_of(" ") + 1);
             istringstream iss(linha); 
             while (iss >> token) {
-                if ((token != "--") && (token != "—") && (token != "“") && (token != "”")) { 
+                if ((token != "--") && (token != "—") && (token != "“") && (token != "”") && (token != "É") && (!token.empty())) { 
                     if (token.size() > 2 && token.substr(0, 2) == "--") {
                         token = token.substr(2); // Remove os primeiros dois caracteres "--", para quando não há espaço
                     }
@@ -65,6 +75,7 @@ int main() {
                     }
                 }
             }
+            linha.clear();
         }
         arquivo.close();
     }
@@ -128,8 +139,15 @@ int main() {
                 }
                 end = std::chrono::high_resolution_clock::now();
                 duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-                std::cout << "Tempo de execução - Árvore AVL - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl << endl;
-                
+                std::cout << "Tempo de execução - Árvore AVL - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl;
+                start = std::chrono::high_resolution_clock::now();
+                itemHuffman * raizHuffman = new itemHuffman();
+                codificacaoHuffman(vetorPalavras, raizHuffman);
+                gerarCodigoHuffman(raizHuffman, "");
+                end = std::chrono::high_resolution_clock::now();
+                duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+                std::cout << "Tempo de execução - Codificação de Huffman - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl << endl;
+
                 central(raiz, vetorArvore);
                 centralAVL(raizAVL, vetorArvoreAVL);
                 outputFile(output, vetorMaps[i][vetorInput[j]].texto, vetorMaps[i][vetorInput[j]].ocorrencias, vetorArvore, vetorArvoreAVL);
@@ -141,8 +159,14 @@ int main() {
             }
             vetorPalavras = copiaHeap;  
         }
+        if(i == 0){
+            for(int k = 0; k < (int)vetorPalavras.size(); k++){
+        cout << vetorPalavras[k].texto << "| " << vetorPalavras[k].ocorrencias << endl;
+    }
+        }
         vetorPalavras.clear();
     }
     output.close();
+    
     return 0;
 }

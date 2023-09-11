@@ -24,3 +24,15 @@ itemArvoreAVL :: itemArvoreAVL(){
     filhoEsquerdo = NULL;
     filhoDireito = NULL;
 }
+
+itemHuffman :: itemHuffman(string p, int o){
+    palavra = p;
+    ocorrencia = o;
+    filhoDireito = NULL;
+    filhoEsquerdo = NULL;
+}
+
+itemHuffman :: itemHuffman(){
+    filhoDireito = NULL;
+    filhoEsquerdo = NULL;
+}

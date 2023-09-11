@@ -28,4 +28,6 @@ void rotacaoSimplesDireita(itemArvoreAVL ** no);
 void rotacaoSimplesEsquerda(itemArvoreAVL ** no);
 void rotacaoDuplaDireita(itemArvoreAVL ** no);
 void rotacaoDuplaEsquerda(itemArvoreAVL ** no);
+void codificacaoHuffman(vector<Palavra> &vetorPalavras, itemHuffman * raiz);
+void gerarCodigoHuffman(itemHuffman * raiz, string codigo);
 #endif
