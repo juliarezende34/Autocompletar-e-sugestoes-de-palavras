@@ -3,8 +3,11 @@
 #include "functions.hpp"
 #include <sstream>
 #include <vector>
+#include <numeric>
 #include <chrono>
 #define NUMERO_ARQUIVOS 6
+
+
 
 int main() {    
     string vetorArquivos[NUMERO_ARQUIVOS] = {"dataset/filosofia.txt", "dataset/filosofia2.txt", "dataset/globalizacao.txt", "dataset/politica.txt", "dataset/ti.txt", "dataset/ti2.txt"}, linha;
@@ -16,10 +19,13 @@ int main() {
     vector<itemArvore*> vetorArvore;
     vector<itemArvoreAVL*> vetorArvoreAVL;
     vector<pair<int,int>> vetorOcorrencias;
+    vector<pair<string,string>> codigosHuffman;
     string token, stopword; 
     unordered_map<string, Palavra> vetorMaps[NUMERO_ARQUIVOS];
     unordered_map<string, string> stopWordMap;
     int controle = 0;
+    vector<int> tempoBinaria, tempoAVL, tempoHuffman;
+    priority_queue<itemHuffman*, vector<itemHuffman*>, CompararOcorrencias> pq;
 
     arquivoStopWords.open("dataset/stopwords.txt", ios::in);
     if (!arquivoStopWords.is_open()) {
@@ -123,50 +129,54 @@ int main() {
             } 
 
             if(vetorMaps[i][vetorInput[j]].ocorrencias != 0){
-                itemArvore * raiz = new itemArvore();
-                itemArvoreAVL * raizAVL = new itemArvoreAVL();
+                itemArvore * raiz = new itemArvore(vetorPalavras[0]);
+                itemArvoreAVL * raizAVL = new itemArvoreAVL(vetorPalavras[0]);
                 auto start = std::chrono::high_resolution_clock::now();
                 for(int k = 0; k < (int)vetorPalavras.size(); k++){
                     arvoreBinaria(&raiz, vetorPalavras[k]);
                 }
                 auto end = std::chrono::high_resolution_clock::now();
                 auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-                std::cout << "Tempo de execução - Árvore binária - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl;
-                
+                //std::cout << "Tempo de execução - Árvore binária - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl;
+                tempoBinaria.push_back((int)duration.count());
+
                 start = std::chrono::high_resolution_clock::now();
                 for(int k = 0; k < (int)vetorPalavras.size(); k++){
                     arvoreAVL(&raizAVL, vetorPalavras[k]);
                 }
                 end = std::chrono::high_resolution_clock::now();
                 duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-                std::cout << "Tempo de execução - Árvore AVL - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl;
+                //std::cout << "Tempo de execução - Árvore AVL - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl;
+                tempoAVL.push_back((int)duration.count());
+                
                 start = std::chrono::high_resolution_clock::now();
-                itemHuffman * raizHuffman = new itemHuffman();
-                codificacaoHuffman(vetorPalavras, raizHuffman);
-                gerarCodigoHuffman(raizHuffman, "");
+                codificacaoHuffman(vetorPalavras, pq);
+                itemHuffman * raizHuffman =  pq.top();
+                gerarCodigoHuffman(raizHuffman, "", codigosHuffman);
                 end = std::chrono::high_resolution_clock::now();
                 duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-                std::cout << "Tempo de execução - Codificação de Huffman - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl << endl;
+                //std::cout << "Tempo de execução - Codificação de Huffman - Texto " << i+1 << " - "<< vetorInput[j] << ": " << duration.count() << " nanossegundos" << std::endl << endl;
+                tempoHuffman.push_back((int)duration.count());
 
                 central(raiz, vetorArvore);
                 centralAVL(raizAVL, vetorArvoreAVL);
-                outputFile(output, vetorMaps[i][vetorInput[j]].texto, vetorMaps[i][vetorInput[j]].ocorrencias, vetorArvore, vetorArvoreAVL);
+                outputFile(output, vetorMaps[i][vetorInput[j]].texto, vetorMaps[i][vetorInput[j]].ocorrencias, vetorArvore, vetorArvoreAVL, codigosHuffman);
                 deleteTree(raiz);
                 deleteTreeAVL(raizAVL);
                 controle = 0;
                 vetorArvore.clear();
                 vetorArvoreAVL.clear();
+                codigosHuffman.clear();
             }
             vetorPalavras = copiaHeap;  
-        }
-        if(i == 0){
-            for(int k = 0; k < (int)vetorPalavras.size(); k++){
-        cout << vetorPalavras[k].texto << "| " << vetorPalavras[k].ocorrencias << endl;
-    }
         }
         vetorPalavras.clear();
     }
     output.close();
+
+    cout << "Tempo médio de execução - Árvore binária: " << accumulate(tempoBinaria.begin(), tempoBinaria.end(), 0) / tempoBinaria.size() * 1.0 << endl;
+    cout << "Tempo médio de execução - Árvore AVL: " << accumulate(tempoAVL.begin(), tempoAVL.end(), 0) / tempoAVL.size() * 1.0 << endl;
+    cout << "Tempo médio de execução - Codificação de Huffman: " << accumulate(tempoHuffman.begin(), tempoHuffman.end(), 0) / tempoHuffman.size() * 1.0 << endl;
     
     return 0;
 }
