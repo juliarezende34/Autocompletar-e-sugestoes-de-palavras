@@ -14,7 +14,7 @@ Este é um programa desenvolvido em C++ para a disciplina de Algoritmos e Estrut
 </p>
 
 ## Objetivos
-
+Neste trabalho, o objetivo é criar um sistema que possibilite oferecer sugestões de palavras aos usuários. Para atingir essa finalidade, adotou-se a estrutura da árvore como base, organizando as palavras de acordo com o seu número de ocorrências em cada texto de entrada. 
 ## Arquivos
 ### dataset
 - ```filosofia.txt```, ```filosofia2.txt```, ```globalizacao.txt```, ```politica.txt```, ```ti.txt```, ```ti2.txt```: textos a terem suas palavras analisadas e organizadas, agrupando as mais frequentes;
@@ -28,7 +28,7 @@ Este é um programa desenvolvido em C++ para a disciplina de Algoritmos e Estrut
 - ```functions.hpp```: assinatura das funções gerais;
 - ```functions.cpp```: implementação das funções gerais;
 - ```comparador.hpp```: estrutura de comparação para inserção na priority queue;
-- ``` main.cpp```: arquivo principal.
+- ```main.cpp```: arquivo principal.
 
 ## Resolução do problema
 ### Leitura dos arquivos e contagem das frequências
