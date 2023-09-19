@@ -113,6 +113,7 @@ int main() {
             vetorInput[j].ocorrencias = vetorMaps[i][vetorInput[j].texto].ocorrencias;
             for(int k = 0; k < (int)vetorPalavras.size(); k++){
                 if(vetorPalavras[k].texto == vetorInput[j].texto){
+                    vetorInput[j].ocorrencias = vetorPalavras[k].ocorrencias;
                     controle = 1;
                     break;
                 }

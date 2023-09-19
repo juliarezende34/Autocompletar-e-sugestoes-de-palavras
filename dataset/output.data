@@ -11,8 +11,8 @@ Frequência: 19
 Codificação de Huffman - Códigos em ordem crescente:
 [0000|imanente] [0001|sentido] [0010|sobre] [0011|segundo] [0100|pensamento] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|princípio] [11001|virtual] [11010|assim] [11011|quanto] [11100|maneira] [11101|wittgenstein] [11110|pode] [11111|vista] 
 
-prazo
-Frequência: 38
+natureza
+Frequência: 35
 Árvore binária - Central:
 [princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
 Árvore AVL - Central:
@@ -20,7 +20,25 @@ Frequência: 38
 Codificação de Huffman - Códigos em ordem crescente:
 [0000|imanente] [0001|sentido] [0010|sobre] [0011|segundo] [0100|pensamento] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|princípio] [11001|virtual] [11010|assim] [11011|quanto] [11100|maneira] [11101|wittgenstein] [11110|pode] [11111|vista] 
 
-linguagem
+pensamento
+Frequência: 115
+Árvore binária - Central:
+[princípio|91] [realidade|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Árvore AVL - Central:
+[princípio|91] [realidade|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|vista] [0001|imanente] [0010|sentido] [0011|sobre] [0100|segundo] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|realidade] [11001|princípio] [11010|virtual] [11011|assim] [11100|wittgenstein] [11101|pode] [11110|maneira] [11111|quanto] 
+
+virtual
+Frequência: 93
+Árvore binária - Central:
+[princípio|91] [realidade|91] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Árvore AVL - Central:
+[princípio|91] [realidade|91] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|sobre] [0011|segundo] [0100|pensamento] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|realidade] [11001|princípio] [11010|assim] [11011|quanto] [11100|maneira] [11101|wittgenstein] [11110|pode] [11111|vista] 
+
+global
 Frequência: 19
 Árvore binária - Central:
 [princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
@@ -29,8 +47,35 @@ Frequência: 19
 Codificação de Huffman - Códigos em ordem crescente:
 [0000|imanente] [0001|sentido] [0010|sobre] [0011|segundo] [0100|pensamento] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|princípio] [11001|virtual] [11010|assim] [11011|quanto] [11100|maneira] [11101|wittgenstein] [11110|pode] [11111|vista] 
 
-infinito
+mídia
+Frequência: 19
+Árvore binária - Central:
+[princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Árvore AVL - Central:
+[princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|sobre] [0011|segundo] [0100|pensamento] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|princípio] [11001|virtual] [11010|assim] [11011|quanto] [11100|maneira] [11101|wittgenstein] [11110|pode] [11111|vista] 
+
+rede
+Frequência: 19
+Árvore binária - Central:
+[princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Árvore AVL - Central:
+[princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|sobre] [0011|segundo] [0100|pensamento] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|princípio] [11001|virtual] [11010|assim] [11011|quanto] [11100|maneira] [11101|wittgenstein] [11110|pode] [11111|vista] 
+
+lógica
 Frequência: 76
+Árvore binária - Central:
+[princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Árvore AVL - Central:
+[princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|sobre] [0011|segundo] [0100|pensamento] [0101|sistema] [0110|priori] [0111|modo] [1000|condição] [1001|mundo] [1010|sujeito] [1011|teoria] [11000|princípio] [11001|virtual] [11010|assim] [11011|quanto] [11100|maneira] [11101|wittgenstein] [11110|pode] [11111|vista] 
+
+dados
+Frequência: 19
 Árvore binária - Central:
 [princípio|91] [virtual|93] [assim|94] [pode|95] [quanto|95] [wittgenstein|95] [maneira|95] [vista|96] [imanente|104] [sentido|110] [sobre|114] [segundo|114] [pensamento|115] [sistema|115] [priori|125] [modo|129] [condição|134] [mundo|134] [sujeito|158] [teoria|176] 
 Árvore AVL - Central:
@@ -50,8 +95,8 @@ Frequência: 12
 Codificação de Huffman - Códigos em ordem crescente:
 [0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
 
-prazo
-Frequência: 38
+natureza
+Frequência: 24
 Árvore binária - Central:
 [infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
 Árvore AVL - Central:
@@ -59,8 +104,17 @@ Frequência: 38
 Codificação de Huffman - Códigos em ordem crescente:
 [0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
 
-linguagem
-Frequência: 51
+pensamento
+Frequência: 115
+Árvore binária - Central:
+[infinito|89] [relação|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Árvore AVL - Central:
+[infinito|89] [relação|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|princípio] [0001|imanente] [0010|sentido] [0011|sobre] [0100|segundo] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|relação] [10111|infinito] [11000|respeito] [11001|maneira] [11010|possível] [11011|wittgenstein] [11100|vista] [11101|pode] [1111|teoria] 
+
+virtual
+Frequência: 80
 Árvore binária - Central:
 [infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
 Árvore AVL - Central:
@@ -68,20 +122,101 @@ Frequência: 51
 Codificação de Huffman - Códigos em ordem crescente:
 [0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
 
-infinito
+global
 Frequência: 19
 Árvore binária - Central:
-[relação|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
 Árvore AVL - Central:
-[relação|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
 Codificação de Huffman - Códigos em ordem crescente:
-[0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|relação] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
+[0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
+
+mídia
+Frequência: 8
+Árvore binária - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Árvore AVL - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
+
+rede
+Frequência: 19
+Árvore binária - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Árvore AVL - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
+
+lógica
+Frequência: 63
+Árvore binária - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Árvore AVL - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
+
+dados
+Frequência: 19
+Árvore binária - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Árvore AVL - Central:
+[infinito|89] [respeito|90] [maneira|95] [possível|95] [wittgenstein|95] [vista|95] [pode|96] [princípio|97] [imanente|109] [sentido|111] [sobre|114] [segundo|114] [pensamento|115] [sistema|119] [modo|129] [condição|133] [priori|144] [mundo|144] [sujeito|154] [teoria|192] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|imanente] [0001|sentido] [0010|segundo] [0011|sobre] [0100|pensamento] [0101|sistema] [0110|modo] [0111|condição] [1000|mundo] [1001|priori] [1010|sujeito] [10110|infinito] [10111|respeito] [11000|vista] [11001|maneira] [11010|possível] [11011|wittgenstein] [1110|teoria] [11110|pode] [11111|princípio] 
 =========================================================================================================================================================================
                                                                                       Texto 3                                                                 
 =========================================================================================================================================================================
 
-prazo
-Frequência: 132
+pensamento
+Frequência: 66
+Árvore binária - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Árvore AVL - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|modo] [0001|pode] [0010|necessidade] [0011|impacto] [0100|podemos] [0101|sistema] [0110|informações] [0111|quadros] [1000|formas] [1001|assim] [1010|processo] [1011|sentido] [11000|ressaltar] [11001|importante] [11010|geral] [11011|atual] [11100|condições] [11101|melhoria] [11110|importância] [11111|estabelecimento] 
+
+virtual
+Frequência: 67
+Árvore binária - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Árvore AVL - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|modo] [0001|pode] [0010|necessidade] [0011|impacto] [0100|podemos] [0101|sistema] [0110|informações] [0111|quadros] [1000|formas] [1001|assim] [1010|processo] [1011|sentido] [11000|ressaltar] [11001|importante] [11010|geral] [11011|atual] [11100|condições] [11101|melhoria] [11110|importância] [11111|estabelecimento] 
+
+global
+Frequência: 66
+Árvore binária - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Árvore AVL - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|modo] [0001|pode] [0010|necessidade] [0011|impacto] [0100|podemos] [0101|sistema] [0110|informações] [0111|quadros] [1000|formas] [1001|assim] [1010|processo] [1011|sentido] [11000|ressaltar] [11001|importante] [11010|geral] [11011|atual] [11100|condições] [11101|melhoria] [11110|importância] [11111|estabelecimento] 
+
+políticas
+Frequência: 67
+Árvore binária - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Árvore AVL - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|modo] [0001|pode] [0010|necessidade] [0011|impacto] [0100|podemos] [0101|sistema] [0110|informações] [0111|quadros] [1000|formas] [1001|assim] [1010|processo] [1011|sentido] [11000|ressaltar] [11001|importante] [11010|geral] [11011|atual] [11100|condições] [11101|melhoria] [11110|importância] [11111|estabelecimento] 
+
+mobilidade
+Frequência: 66
+Árvore binária - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Árvore AVL - Central:
+[ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|modo] [0001|pode] [0010|necessidade] [0011|impacto] [0100|podemos] [0101|sistema] [0110|informações] [0111|quadros] [1000|formas] [1001|assim] [1010|processo] [1011|sentido] [11000|ressaltar] [11001|importante] [11010|geral] [11011|atual] [11100|condições] [11101|melhoria] [11110|importância] [11111|estabelecimento] 
+
+mídia
+Frequência: 67
 Árvore binária - Central:
 [ressaltar|133] [condições|133] [importante|133] [atual|133] [geral|133] [impacto|134] [estabelecimento|134] [importância|134] [quadros|134] [sistema|134] [pode|134] [informações|134] [formas|134] [podemos|134] [modo|134] [necessidade|134] [melhoria|134] [assim|199] [processo|200] [sentido|200] 
 Árvore AVL - Central:
@@ -92,8 +227,44 @@ Codificação de Huffman - Códigos em ordem crescente:
                                                                                       Texto 4                                                                 
 =========================================================================================================================================================================
 
-prazo
-Frequência: 134
+pensamento
+Frequência: 67
+Árvore binária - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [políticas|267] [político|400] 
+Árvore AVL - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [políticas|267] [político|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|processo] [0001|metas] [0010|eleitores] [0011|sentido] [010|político] [0110|saúde] [0111|melhoria] [1000|assim] [1001|atual] [1010|políticas] [10110|longo] [10111|modo] [11000|segurança] [11001|condições] [11010|geral] [11011|podemos] [11100|educação] [11101|importância] [11110|impacto] [11111|política] 
+
+global
+Frequência: 67
+Árvore binária - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [políticas|267] [político|400] 
+Árvore AVL - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [políticas|267] [político|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|processo] [0001|metas] [0010|eleitores] [0011|sentido] [010|político] [0110|saúde] [0111|melhoria] [1000|assim] [1001|atual] [1010|políticas] [10110|longo] [10111|modo] [11000|segurança] [11001|condições] [11010|geral] [11011|podemos] [11100|educação] [11101|importância] [11110|impacto] [11111|política] 
+
+políticas
+Frequência: 267
+Árvore binária - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [formação|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [político|400] 
+Árvore AVL - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [formação|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [político|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|política] [0001|processo] [0010|eleitores] [0011|metas] [010|político] [0110|sentido] [0111|assim] [1000|atual] [1001|melhoria] [1010|saúde] [10110|formação] [10111|educação] [11000|segurança] [11001|modo] [11010|impacto] [11011|condições] [11100|geral] [11101|longo] [11110|importância] [11111|podemos] 
+
+mobilidade
+Frequência: 67
+Árvore binária - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [políticas|267] [político|400] 
+Árvore AVL - Central:
+[longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [políticas|267] [político|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|processo] [0001|metas] [0010|eleitores] [0011|sentido] [010|político] [0110|saúde] [0111|melhoria] [1000|assim] [1001|atual] [1010|políticas] [10110|longo] [10111|modo] [11000|segurança] [11001|condições] [11010|geral] [11011|podemos] [11100|educação] [11101|importância] [11110|impacto] [11111|política] 
+
+mídia
+Frequência: 67
 Árvore binária - Central:
 [longo|134] [podemos|134] [impacto|134] [geral|134] [importância|134] [modo|134] [condições|134] [educação|134] [segurança|134] [política|198] [processo|198] [eleitores|199] [metas|199] [sentido|200] [saúde|201] [melhoria|201] [assim|201] [atual|201] [políticas|267] [político|400] 
 Árvore AVL - Central:
@@ -104,19 +275,55 @@ Codificação de Huffman - Códigos em ordem crescente:
                                                                                       Texto 5                                                                 
 =========================================================================================================================================================================
 
-prazo
-Frequência: 66
+políticas
+Frequência: 67
 Árvore binária - Central:
 [software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
 Árvore AVL - Central:
 [software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
 Codificação de Huffman - Códigos em ordem crescente:
 [0000|sistema] [0001|aumento] [0010|melhor] [0011|impacto] [0100|desenvolvimento] [0101|informações] [0110|novas] [0111|dados] [1000|ti] [1001|implantação] [1010|segurança] [10110|software] [10111|rede] [11000|integridade] [11001|utilizados] [11010|envolvidos] [11011|assim] [11100|hardware] [11101|tempo] [1111|utilização] 
+
+ti
+Frequência: 201
+Árvore binária - Central:
+[software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [necessidade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
+Árvore AVL - Central:
+[software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [necessidade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|tempo] [0001|aumento] [0010|desenvolvimento] [0011|sistema] [0100|impacto] [0101|melhor] [0110|informações] [0111|novas] [1000|dados] [1001|implantação] [10100|necessidade] [10101|rede] [1011|segurança] [11000|utilizados] [11001|software] [11010|integridade] [11011|envolvidos] [11100|assim] [11101|hardware] [1111|utilização] 
+
+rede
+Frequência: 134
+Árvore binária - Central:
+[software|134] [utilizados|134] [envolvidos|134] [integridade|134] [necessidade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
+Árvore AVL - Central:
+[software|134] [utilizados|134] [envolvidos|134] [integridade|134] [necessidade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|sistema] [0001|aumento] [0010|melhor] [0011|impacto] [0100|desenvolvimento] [0101|informações] [0110|novas] [0111|dados] [1000|ti] [1001|implantação] [1010|segurança] [10110|software] [10111|integridade] [11000|necessidade] [11001|utilizados] [11010|envolvidos] [11011|assim] [11100|hardware] [11101|tempo] [1111|utilização] 
+
+lógica
+Frequência: 67
+Árvore binária - Central:
+[software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
+Árvore AVL - Central:
+[software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [dados|201] [implantação|266] [segurança|268] [utilização|399] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|sistema] [0001|aumento] [0010|melhor] [0011|impacto] [0100|desenvolvimento] [0101|informações] [0110|novas] [0111|dados] [1000|ti] [1001|implantação] [1010|segurança] [10110|software] [10111|rede] [11000|integridade] [11001|utilizados] [11010|envolvidos] [11011|assim] [11100|hardware] [11101|tempo] [1111|utilização] 
+
+dados
+Frequência: 201
+Árvore binária - Central:
+[software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [necessidade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [implantação|266] [segurança|268] [utilização|399] 
+Árvore AVL - Central:
+[software|134] [utilizados|134] [envolvidos|134] [rede|134] [integridade|134] [necessidade|134] [hardware|199] [tempo|199] [assim|199] [impacto|200] [desenvolvimento|200] [aumento|200] [melhor|200] [sistema|200] [informações|201] [ti|201] [novas|201] [implantação|266] [segurança|268] [utilização|399] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|tempo] [0001|impacto] [0010|melhor] [0011|desenvolvimento] [0100|aumento] [0101|sistema] [0110|informações] [0111|ti] [1000|novas] [1001|implantação] [10100|necessidade] [10101|rede] [1011|segurança] [11000|utilizados] [11001|software] [11010|integridade] [11011|envolvidos] [11100|assim] [11101|hardware] [1111|utilização] 
 =========================================================================================================================================================================
                                                                                       Texto 6                                                                 
 =========================================================================================================================================================================
 
-prazo
+políticas
 Frequência: 67
 Árvore binária - Central:
 [software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
@@ -124,3 +331,39 @@ Frequência: 67
 [software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
 Codificação de Huffman - Códigos em ordem crescente:
 [000|utilização] [0010|hardware] [0011|informações] [0100|dados] [0101|melhor] [0110|assim] [0111|aumento] [1000|ti] [1001|implantação] [1010|segurança] [10110|software] [10111|dúvidas] [11000|problemas] [11001|rede] [11010|sobre] [11011|desenvolvimento] [11100|sistema] [11101|impacto] [11110|novas] [11111|tempo] 
+
+ti
+Frequência: 201
+Árvore binária - Central:
+[software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [existem|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Árvore AVL - Central:
+[software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [existem|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|impacto] [0001|informações] [001|utilização] [0100|hardware] [0101|aumento] [0110|melhor] [0111|dados] [1000|assim] [1001|implantação] [10100|rede] [10101|software] [1011|segurança] [11000|problemas] [11001|sobre] [11010|existem] [11011|dúvidas] [11100|tempo] [11101|desenvolvimento] [11110|novas] [11111|sistema] 
+
+rede
+Frequência: 134
+Árvore binária - Central:
+[software|134] [sobre|134] [dúvidas|134] [problemas|134] [existem|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Árvore AVL - Central:
+[software|134] [sobre|134] [dúvidas|134] [problemas|134] [existem|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[000|utilização] [0010|hardware] [0011|informações] [0100|assim] [0101|melhor] [0110|aumento] [0111|dados] [1000|ti] [1001|implantação] [1010|segurança] [10110|existem] [10111|dúvidas] [11000|software] [11001|problemas] [11010|sobre] [11011|novas] [11100|tempo] [11101|impacto] [11110|sistema] [11111|desenvolvimento] 
+
+lógica
+Frequência: 67
+Árvore binária - Central:
+[software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Árvore AVL - Central:
+[software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [dados|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[000|utilização] [0010|hardware] [0011|informações] [0100|dados] [0101|melhor] [0110|assim] [0111|aumento] [1000|ti] [1001|implantação] [1010|segurança] [10110|software] [10111|dúvidas] [11000|problemas] [11001|rede] [11010|sobre] [11011|desenvolvimento] [11100|sistema] [11101|impacto] [11110|novas] [11111|tempo] 
+
+dados
+Frequência: 201
+Árvore binária - Central:
+[software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [existem|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Árvore AVL - Central:
+[software|134] [rede|134] [sobre|134] [dúvidas|134] [problemas|134] [existem|134] [sistema|199] [novas|199] [tempo|199] [impacto|199] [desenvolvimento|199] [informações|200] [hardware|200] [aumento|201] [ti|201] [assim|201] [melhor|201] [implantação|267] [segurança|268] [utilização|400] 
+Codificação de Huffman - Códigos em ordem crescente:
+[0000|impacto] [0001|informações] [001|utilização] [0100|hardware] [0101|assim] [0110|aumento] [0111|melhor] [1000|ti] [1001|implantação] [10100|rede] [10101|software] [10110|existem] [10111|dúvidas] [11000|problemas] [11001|sobre] [1101|segurança] [11100|tempo] [11101|desenvolvimento] [11110|novas] [11111|sistema] 
