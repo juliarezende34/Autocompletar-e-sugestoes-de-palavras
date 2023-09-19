@@ -14,8 +14,8 @@ int main() {
     string palavraAtual;
     ifstream arquivo, arquivoStopWords, arquivoInput;
     ofstream output;
-    vector<string> tokens, vetorInput;
-    vector<Palavra> vetorPalavras, copiaHeap;
+    vector<string> tokens;
+    vector<Palavra> vetorPalavras, copiaHeap, vetorInput;
     vector<itemArvore*> vetorArvore;
     vector<itemArvoreAVL*> vetorArvoreAVL;
     vector<pair<int,int>> vetorOcorrencias;
@@ -93,7 +93,8 @@ int main() {
     }
     while(!arquivoInput.eof()){
         arquivoInput >> palavraAtual;
-        vetorInput.push_back(palavraAtual);
+        Palavra * palavraNova = new Palavra(palavraAtual);
+        vetorInput.push_back(*palavraNova);
     }    
     arquivoInput.close();
 
@@ -109,8 +110,9 @@ int main() {
         check(vetorMaps[i], vetorPalavras);
         copiaHeap = vetorPalavras;
         for(int j = 0; j < (int)vetorInput.size(); j++){ 
+            vetorInput[j].ocorrencias = vetorMaps[i][vetorInput[j].texto].ocorrencias;
             for(int k = 0; k < (int)vetorPalavras.size(); k++){
-                if(vetorPalavras[k].texto == vetorInput[j]){
+                if(vetorPalavras[k].texto == vetorInput[j].texto){
                     controle = 1;
                     break;
                 }
@@ -118,17 +120,16 @@ int main() {
             if(controle == 1){
                 //A palavra do input está no heap
                 for(int k = 0; k < (int)vetorPalavras.size(); k++){
-                    if(vetorPalavras[k].texto == vetorInput[j]){
+                    if(vetorPalavras[k].texto == vetorInput[j].texto){
                         vetorPalavras.erase(vetorPalavras.begin() + k);
                         break;
                     }
                 }
             }
             else{
-                vetorPalavras.pop_back();
+                vetorPalavras.erase(vetorPalavras.begin());
             } 
-
-            if(vetorMaps[i][vetorInput[j]].ocorrencias != 0){
+            if(vetorMaps[i][vetorInput[j].texto].ocorrencias != 0){
                 itemArvore * raiz = new itemArvore(vetorPalavras[0]);
                 itemArvoreAVL * raizAVL = new itemArvoreAVL(vetorPalavras[0]);
                 auto start = std::chrono::high_resolution_clock::now();
@@ -160,8 +161,11 @@ int main() {
 
                 central(raiz, vetorArvore);
                 centralAVL(raizAVL, vetorArvoreAVL);
-                outputFile(output, vetorMaps[i][vetorInput[j]].texto, vetorMaps[i][vetorInput[j]].ocorrencias, vetorArvore, vetorArvoreAVL, codigosHuffman);
+                outputFile(output, vetorInput[j].texto, vetorInput[j].ocorrencias, vetorArvore, vetorArvoreAVL, codigosHuffman);
                 deleteTree(raiz);
+                while (!pq.empty()) {
+                    pq.pop();
+                }
                 deleteTreeAVL(raizAVL);
                 controle = 0;
                 vetorArvore.clear();

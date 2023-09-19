@@ -18,6 +18,8 @@ class Palavra{
     public:
         string texto;
         int ocorrencias;
+        Palavra();
+        Palavra(string t);
 };
 
 #endif

@@ -9,12 +9,15 @@
 
 ## Introdução
 <p align="justify">
-Este é um programa desenvolvido em C++ para a disciplina de Algoritmos e Estruturas de Dados II. 
+Este é um programa desenvolvido em C++ para a disciplina de Algoritmos e Estruturas de Dados II. Atualmente, há uma imensidade de textos, livros e artigos disponíveis para qualquer objetivo de pesquisa, portanto é necessário ter uma ferramenta que seja eficiente no momento de decidir em qual material procurar primeiro. Assim, este trabalho visa a implementação de um auxiliar de pesquisa, indicando qual texto possui a maior frequência de palavras-chave indicadas pelo usuário.
 
 </p>
 
 ## Objetivos
-Neste trabalho, o objetivo é criar um sistema que possibilite oferecer sugestões de palavras aos usuários. Para atingir essa finalidade, adotou-se a estrutura da árvore como base, organizando as palavras de acordo com o seu número de ocorrências em cada texto de entrada. 
+<p align="justify">
+Neste trabalho, o objetivo é criar um sistema que possibilite oferecer sugestões de palavras aos usuários. Para atingir essa finalidade, adotou-se a estrutura da árvore como base, organizando as palavras de acordo com o seu número de ocorrências em cada texto de entrada. Tem-se também como objetivo comparar qual estrutura de árvore é mais adequada para a finalidade desta ferramenta de busca: árvore binária, AVL ou codificação de Huffman.
+</p>
+
 ## Arquivos
 ### dataset
 - ```filosofia.txt```, ```filosofia2.txt```, ```globalizacao.txt```, ```politica.txt```, ```ti.txt```, ```ti2.txt```: textos a terem suas palavras analisadas e organizadas, agrupando as mais frequentes;
@@ -31,7 +34,9 @@ Neste trabalho, o objetivo é criar um sistema que possibilite oferecer sugestõ
 - ```main.cpp```: arquivo principal.
 
 ## Resolução do problema
+
 ### Leitura dos arquivos e contagem das frequências
+<p align="justify">
 O primeiro procedimento é ler o arquivo de stop words, adicionando-as em um unordered map para futura conferência. Depois, lê-se todos os arquivos de entrada, organizados em um vetor estático, organizando suas palavras em um unordered map (cada texto tem o seu) após a remoção de caracteres especiais e conversão da palavra para minúscula. Caso a palavra já exista no unordered map to texto que está sendo lido no momento, seu número de ocorrências é incrementado. Se o usuário desejar modificar os textos de entrada, basta mudar o número de itens e a declaração do vetor ```vetorArquivos```, declarado na linha 13 do arquivo ```main.cpp```.
 
 <b>Os procedimentos descritos abaixo ocorrem da mesma maneira para cada um dos arquivos de entrada:</b>
@@ -39,6 +44,8 @@ O primeiro procedimento é ler o arquivo de stop words, adicionando-as em um uno
 Cria-se um heap com as top (K+1) palavras do texto, sendo esse a base para a construção das árvores e da codificação de Huffman. Agora, percorrendo o vetor que contém as palavras do ```input.data```, realiza-se as manipulações necessárias por palavra.
 
 Caso a palavra esteja contida no heap de palavras mais frequentes, ela é removida, mas caso contrário, remove-se a última posição do heap (a menos frequente). Dessa forma, de um jeito ou de outro, obtém-se um heap de K elementos. Se o número de ocorrências da palavra no texto atual for diferente de 0, começa o processo de contrução das árvores.
+
+</p>
 
 ### Árvore binária
 
