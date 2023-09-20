@@ -179,9 +179,9 @@ int main() {
     }
     output.close();
 
-    cout << "Tempo médio de execução - Árvore binária: " << accumulate(tempoBinaria.begin(), tempoBinaria.end(), 0) / tempoBinaria.size() * 1.0 << endl;
-    cout << "Tempo médio de execução - Árvore AVL: " << accumulate(tempoAVL.begin(), tempoAVL.end(), 0) / tempoAVL.size() * 1.0 << endl;
-    cout << "Tempo médio de execução - Codificação de Huffman: " << accumulate(tempoHuffman.begin(), tempoHuffman.end(), 0) / tempoHuffman.size() * 1.0 << endl;
+    cout << "Tempo médio de execução (ns) - Árvore binária: " << accumulate(tempoBinaria.begin(), tempoBinaria.end(), 0) / tempoBinaria.size() * 1.0 << endl;
+    cout << "Tempo médio de execução (ns) - Árvore AVL: " << accumulate(tempoAVL.begin(), tempoAVL.end(), 0) / tempoAVL.size() * 1.0 << endl;
+    cout << "Tempo médio de execução (ns) - Codificação de Huffman: " << accumulate(tempoHuffman.begin(), tempoHuffman.end(), 0) / tempoHuffman.size() * 1.0 << endl;
     
     return 0;
 }
